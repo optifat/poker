@@ -31,8 +31,8 @@ impl Player{
         Err(std::io::Error::new(std::io::ErrorKind::Other, "Player has 2 cards already"))
     }
 
-    pub fn make_bet(&self, previous_bet: u32) -> bet::Bet(){
-        println!("Current bet is {}$", u32);
+    pub fn make_bet(&self, previous_bet: u32) -> bet::Bet{
+        println!("Current bet is {}$", previous_bet);
         loop{
             println!("Press 'Enter' to call/check, 'F' to fold or amount of money to raise");
         }
