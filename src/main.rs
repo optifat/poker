@@ -1,4 +1,7 @@
 mod card_deck;
+mod card;
+mod bet;
+mod texas_holdem;
 
 use crate::card_deck::Deck;
 

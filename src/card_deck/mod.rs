@@ -1,7 +1,5 @@
-mod card;
-
 use std::collections::VecDeque;
-use self::card::Card;
+use crate::card::Card;
 use rand::prelude::*;
 
 pub struct Deck{
@@ -9,7 +7,7 @@ pub struct Deck{
 }
 
 impl Deck{
-    pub fn new() -> Deck{
+    pub fn new() -> Self{
         let mut deck = VecDeque::with_capacity(52);
         for value in 0..=12{
             for suit in 0..=3{
@@ -21,6 +19,10 @@ impl Deck{
 
     pub fn shuffle(&mut self){
         self.cards.make_contiguous().shuffle(&mut rand::thread_rng());
+    }
+
+    pub fn pop_card(&mut self) -> Card{
+        self.cards.pop_front().unwrap()
     }
 }
 
